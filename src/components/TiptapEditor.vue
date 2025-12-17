@@ -21,12 +21,14 @@ export default {
 	data() {
 		return {
 			editor: null,
+			editorReady: false,
 			selectedNode: null,
 		}
 	},
 	computed: {
 		showDragHandle() {
 			return this.editor
+				&& this.editorReady
 		},
 	},
 	mounted() {
@@ -39,6 +41,10 @@ export default {
 				<p>This is a paragraph</p>
 				<p>Another paragraph</p>
 			`,
+		})
+
+		this.$nextTick(() => {
+			this.editorReady = true
 		})
 	},
 	beforeDestroy() {
