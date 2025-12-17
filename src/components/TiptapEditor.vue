@@ -28,7 +28,7 @@ export default {
 	computed: {
 		showDragHandle() {
 			return this.editor
-				&& this.editorReady
+			//	&& this.editorReady
 		},
 	},
 	mounted() {
